@@ -44,6 +44,7 @@ public static class Chunk
         return GetBlockFromChunkCoordinates(chunkData, chunkCoordinates.x, chunkCoordinates.y, chunkCoordinates.z);
     }
 
+    //in chunk coordinate system
     public static BlockType GetBlockFromChunkCoordinates(ChunkData chunkData, int x, int y, int z)
     {
         if (InRange(chunkData, x) && InRangeHeight(chunkData, y) && InRange(chunkData, z))
@@ -68,6 +69,7 @@ public static class Chunk
         }
     }
 
+    //in chunk coordinate system
     private static int GetIndexFromPosition(ChunkData chunkData, int x, int y, int z)
     {
         return x + chunkData.chunkSize * y + chunkData.chunkSize * chunkData.chunkHeight * z;
@@ -92,6 +94,7 @@ public static class Chunk
         return meshData;
     }
 
+    //in world coordinate system
     internal static Vector3Int ChunkPositionFromBlockCoords(World world, int x, int y, int z)
     {
         Vector3Int pos = new Vector3Int

@@ -22,6 +22,7 @@ public class MeshData
         }
     }
 
+    //only used in sets of 4 to generate a quad
     public void AddVertex(Vector3 vertex, bool vertexGeneratesCollider)
     {
         vertices.Add(vertex);
@@ -32,6 +33,7 @@ public class MeshData
 
     }
 
+    //only used after 4 new vertices are added
     public void AddQuadTriangles(bool quadGeneratesCollider)
     {
         triangles.Add(vertices.Count - 4);

@@ -80,6 +80,8 @@ public class World: MonoBehaviour
         }
     }
 
+    //for getting blocks neighboring a chunk
+    //in world coordinate system
     internal BlockType GetBlockFromChunkCoordinates(ChunkData chunkData, int x, int y, int z)
     {
         Vector3Int pos = Chunk.ChunkPositionFromBlockCoords(this, x, y, z);
@@ -89,7 +91,7 @@ public class World: MonoBehaviour
 
         if (containerChunk == null)
             return BlockType.Nothing;
-        Vector3Int blockInCHunkCoordinates = Chunk.GetBlockInChunkCoordinates(containerChunk, new Vector3Int(x, y, z));
-        return Chunk.GetBlockFromChunkCoordinates(containerChunk, blockInCHunkCoordinates);
+        Vector3Int blockInChunkCoordinates = Chunk.GetBlockInChunkCoordinates(containerChunk, new Vector3Int(x, y, z));
+        return Chunk.GetBlockFromChunkCoordinates(containerChunk, blockInChunkCoordinates);
     }
 }

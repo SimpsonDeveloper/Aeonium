@@ -10,6 +10,7 @@ public class BlockDataSO : ScriptableObject
     public List<TextureData> textureDataList;
 }
 
+//coordinates are 0-based
 [Serializable]
 public class TextureData
 {

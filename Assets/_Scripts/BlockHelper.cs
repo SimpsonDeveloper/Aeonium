@@ -58,6 +58,7 @@ public static class BlockHelper
     {
         var generatesCollider = BlockDataManager.blockTextureDataDictionary[blockType].generatesCollider;
         //order of vertices matters for the normals and how we render the mesh
+        //order should be clockwise
         switch (direction)
         {
             case Direction.backwards:
@@ -102,6 +103,7 @@ public static class BlockHelper
         }
     }
 
+    //gets the UV coordinates on the spritesheet. UV coordinates are between 0 and 1
     public static Vector2[] FaceUVs(Direction direction, BlockType blockType)
     {
         Vector2[] UVs = new Vector2[4];
